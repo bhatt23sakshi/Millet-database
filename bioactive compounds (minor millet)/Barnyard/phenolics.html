@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
+<style type="text/css">
+
+  /* ============ desktop view ============ */
+  @media all and (min-width: 992px) {
+  
+    .dropdown-menu li{
+      position: relative;
+    }
+    .dropdown-menu .submenu{ 
+      display: none;
+      position: absolute;
+      left:100%; top:-7px;
+    }
+    .dropdown-menu .submenu-left{ 
+      right:100%; left:auto;
+    }
+  
+    .dropdown-menu > li:hover{ background-color: #f1f1f1 }
+    .dropdown-menu > li:hover > .submenu{
+      display: block;
+    }
+  }	
+  /* ============ desktop view .end// ============ */
+  
+  /* ============ small devices ============ */
+  @media (max-width: 991px) {
+  
+  .dropdown-menu .dropdown-menu{
+      margin-left:0.7rem; margin-right:0.7rem; margin-bottom: .5rem;
+  }
+  
+  }	
+  /* ============ small devices .end// ============ */
+  
+  .masthead{
+      background-size: cover;
+      min-height: 100vh;
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0,0,0,.2);
+    opacity: 80%;
+  }
+  </style>
+  
+  
+  <script type="text/javascript">
+  //	window.addEventListener("resize", function() {
+  //		"use strict"; window.location.reload(); 
+  //	});
+  
+  
+    document.addEventListener("DOMContentLoaded", function(){
+          
+  
+        /////// Prevent closing from click inside dropdown
+      document.querySelectorAll('.dropdown-menu').forEach(function(element){
+        element.addEventListener('click', function (e) {
+          e.stopPropagation();
+        });
+      })
+  
+  
+  
+      // make it as accordion for smaller screens
+      if (window.innerWidth < 992) {
+  
+        // close all inner dropdowns when parent is closed
+        document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
+          everydropdown.addEventListener('hidden.bs.dropdown', function () {
+            // after dropdown is hidden, then find all submenus
+              this.querySelectorAll('.submenu').forEach(function(everysubmenu){
+                // hide every submenu as well
+                everysubmenu.style.display = 'none';
+              });
+          })
+        });
+        
+        document.querySelectorAll('.dropdown-menu a').forEach(function(element){
+          element.addEventListener('click', function (e) {
+      
+              let nextEl = this.nextElementSibling;
+              if(nextEl && nextEl.classList.contains('submenu')) {	
+                // prevent opening link if link needs to open dropdown
+                e.preventDefault();
+                console.log(nextEl);
+                if(nextEl.style.display == 'block'){
+                  nextEl.style.display = 'none';
+                } else {
+                  nextEl.style.display = 'block';
+                }
+  
+              }
+          });
+        })
+      }
+      // end if innerWidth
+  
+    }); 
+    // DOMContentLoaded  end
+  </script>
+    <title>History </title>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+       <a class="navbar-brand" href="/Home page .html">Home</a>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"  aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+     <div class="collapse navbar-collapse" id="main_nav">
+     
+   
+     <ul class="navbar-nav">
+       
+       <li class="nav-item"><a class="nav-link" href="/About.html"> About </a></li>
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Millet  </a>
+           <ul class="dropdown-menu">
+           <li><a class="dropdown-item" href="/millets/history.html"> History </a></li>
+           
+          
+           <li><a class="dropdown-item" href="/millets/Taxonomy.html"> Taxonomy </a></li>
+           <li><a class="dropdown-item" href="/millets/types of millet.html"> Types </a>
+           <li><a class="dropdown-item" href="/millets/Nutrition.html"> Nutrition </a>
+           <li><a class="dropdown-item" href="/millets/Cultivation.html"> Cultivation </a>
+           <li><a class="dropdown-item" href="/millets/production.html"> Production </a>
+           </ul>
+       </li>
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Major Millet  </a>
+           <ul class="dropdown-menu">
+   
+           <li><a class="dropdown-item" href="#"> Finger Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/majorMillets/Finger/history finger millet.html"> History </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Finger/taxonomy finger millet.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Finger/varieties finger millet.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/majorMillets/Finger/nutrition finger millet.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/majorMillets/Finger/cultivation finger millet.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/majorMillets/Finger/production finger millet.html"> Production </a>
+             <li><a class="dropdown-item" href="/majorMillets/Finger/antioxidant finger millet.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Foxtail Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/majorMillets/Foxtail/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Foxtail/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Foxtail/varieties.html"> varieties </a>
+             <li><a class="dropdown-item" href="/majorMillets/Foxtail/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/majorMillets/Foxtail/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/majorMillets/Foxtail/production.html"> Production </a>
+             <li><a class="dropdown-item" href="/majorMillets/Foxtail/antioxidant.html"> Antioxidant </a>
+   
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Pearl Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/majorMillets/Pearl/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Pearl/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Pearl/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/majorMillets/Pearl/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/majorMillets/Pearl/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/majorMillets/Pearl/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/majorMillets/Pearl/antioxidant.html"> Antioxidant </a>
+           </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Proso Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/majorMillets/Praso/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Praso/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Praso/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/majorMillets/Praso/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/majorMillets/Praso/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/majorMillets/Praso/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/majorMillets/Praso/antioxidant.html"> Antioxidant </a>
+            </ul>
+           </li>
+   
+           
+           </ul>
+       </li>
+   
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Minor Millet  </a>
+           <ul class="dropdown-menu">
+   
+           <li><a class="dropdown-item" href="#"> Kodo Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Kudo/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="../minorMillets/Kudo/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="../minorMillets/Kudo/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="../minorMillets/Kudo/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="../minorMillets/Kudo/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="../minorMillets/Kudo/production.html"> Production </a>
+               <li><a class="dropdown-item" href="../minorMillets/Kudo/antioxidant.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Little Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Little/histroy.html"> History </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Little/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Little/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/minorMillets/Little/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/minorMillets/Little/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/minorMillets/Little/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/minorMillets/Little/antioxidant.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Fonio Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Fonio/histroy.html"> History </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Fonio/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Fonio/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/minorMillets/Fonio/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/minorMillets/Fonio/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/minorMillets/Fonio/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/minorMillets/Fonio/antioxidants.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Barnyard Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Barnyard/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Barnyard/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Barnyard/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/minorMillets/Barnyard/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/minorMillets/Barnyard/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/minorMillets/Barnyard/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/minorMillets/Barnyard/antioxidant.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Teff Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Teff/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Teff/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Teff/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/minorMillets/Teff/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/minorMillets/Teff/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/minorMillets/Teff/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/minorMillets/Teff/antioxidant .html"> Antioxidant </a>	
+            </ul>
+           </li>
+   
+           
+           </ul>
+       </li>
+   
+   
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Bioactive Compounds (Major Millet)  </a>
+           <ul class="dropdown-menu">
+   
+           <li><a class="dropdown-item" href="#"> Finger Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Finger/Dietary fibre component..html"> Dietary Fibre </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Finger/Arabinoxylaan.html"> Arabinoxylan </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Finger/flavoniods.html"> Flavoniod </a>
+             
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Finger/phenolic acids.html"> Phenolic Acids  </a>
+             
+            </ul>
+           </li>
+   
+           <li><a class="dropdown-item" href="#"> Foxtail Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Foxtail/phenolics.html"> Phenolic </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Foxtail/bioactive peptides.html"> Bioactive peptide  </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Foxtail/carotenoids.html"> Carotenoids   </a>
+             <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Foxtail/tocols.html"> Tocols  </a>
+             
+            </ul>
+           </li>
+   
+           <li><a class="dropdown-item" href="#"> Pearl Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Pearl/p-coumeric acid.html"> p-Coumeric Acid  </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Pearl/ascorbic acid.html"> Ascorbic Acid   </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Pearl/catechol.html"> Catechol</a></li>
+             <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Pearl/flavonoids.html">Flavanoid </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Pearl/gallic acid.html">Gallic Acid  </a></li>
+                 
+             
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Proso Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/phytochemicals.html"> Phytochemicals </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/phenolics.html"> Phenolics </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/chlorogenic acid.html"> Chlorogenic  </a> </li>
+             <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/p-coumaric acid.html"> p-coumaric Acid  </a> </li>
+             <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/ferulic acid.html"> Ferulic Acid  </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/syringic acid.html"> Syringic Acid   </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/caffeic acid.html"> Caffeic Acid  </a> </li>
+             <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/carotenoids.html"> Carotenoids </a> </li>
+             
+            </ul>
+           </li>
+         
+          
+   
+           
+           </ul>
+       </li>
+   
+   
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Bioactive Compounds (Minor Millet)  </a>
+           <ul class="dropdown-menu">
+   
+           <li><a class="dropdown-item" href="#"> Kodo Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/phytochemicals.html"> phytochemicals</a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/phenolics.html"> Phenolics  </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/catechin.html">Catechin  </a></li>
+             <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/narigin.html"> Naringin </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/p-coumeric acid.html"> P-Coumaric Acid </a></li>
+                 <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/taxifolin.html"> Taxifolin </a></li>
+                   <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/frulic acid.html">Ferulic Acid  </a></li>
+                     <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/sinapic acid.html"> Sinapic Acid </a></li>
+                     <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/pterin-6-carboxylic acid.html">Pterin-6-Carboxylic Acid  </a> </li>
+                       <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/campesterol.html">Campesterol  </a></li>
+   
+             
+            </ul>
+           </li>
+   
+           <li><a class="dropdown-item" href="#"> Little Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Little/phytochemicals.html"> Phytochemicals</a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Little/phenolics.html"> Phenolics </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Little/Luteolin.html"> Luteolin</a>
+             <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Little/Kaempferol.html"> Kaempferol </a>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Little/Apigenin.html"> Apigenin</a>
+             
+            </ul>
+           </li>
+   
+           <li><a class="dropdown-item" href="#"> Fonio Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Fonio/dietary fibre.html"> Dietary Fibre </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Fonio/flavonoids.html"> Flavonoid </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Fonio/phenolics.html"> Phenolics </a> </li>
+             <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Fonio/alkaloids.html"> Alkaloids  </a> </li>
+               
+                    <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Fonio/saponins.html"> Saponins  </a> </li>
+                 
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Barnyard Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Barnyard/phenolics.html"> Phenolics  </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Barnyard/orthodihydroxyphenol.html"> Orthodihydroxyphenol</a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Barnyard/Saponins.html">Saponins  </a>
+             <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Barnyard/Tannins.html"> Tannins  </a>
+             
+            </ul>
+           </li>
+   
+           <li><a class="dropdown-item" href="#"> Teff Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Teff/dietary fibre.html"> Dietary Fibre </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Teff/saponins.html"> Saponins  </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Teff/phytochemicals.html"> Phytochemicals </a>
+             <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Teff/phenoli compounds.html"> Phenolic acid  </a>
+             
+            </ul>
+           </li>
+         
+          
+   
+           
+           </ul>
+       </li>
+   
+       <li class="nav-item"><a class="nav-link" href="/team.html"> Team </a></li>
+   
+     </ul>
+   
+     
+   
+     </div> <!-- navbar-collapse.// -->
+    </div> <!-- container-fluid.// -->
+   </nav>
+<body>
+    <body style="background-color:antiquewhite;"></body>
+<body>
+  
+    <style>
+        p{font-family:sans-serif;
+        font-size: medium;
+        font-style: normal;}
+
+        </style>
+        <h1>Phenolics</h1>
+        <hr>
+        <p>Phenolic compounds are a diverse group of organic molecules characterized by an aromatic ring with one or more hydroxyl groups and various substituents. In plants, phenolic compounds can be classified into several subgroups including flavonoids, phenolic acids, lignans, and phytoestrogens (isoflavones). Phenolic acids derive from benzoic acid (C6-C1 structure) and include p-hydroxybenzoic, gallic, syringic, vanillic, and protocatechuic acid, as well as other derivatives of cinnamic acid (C6-C3 structure) such as caffeic, ferulic, sinapic, and p-coumaric acids. Flavonoids are characterized by a basic C6-C3-C6 structure and include anthocyanin pigments, flavonols, flavanols, and isoflavones <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4033754/" class="button">[1]</a>. These compounds have been widely recognized for their potential health benefits. On the other hand, tannins are classified as condensed or hydrolysable phenolic compounds that act as antinutrients by binding proteins to form soluble and insoluble complexes, thereby inhibiting protein digestion. Tannins are found in cereals and are particularly effective at binding to proteins rich in imino acid proline groups <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4033754/" class="button">[1]</a>.
+            <p>Phenolic compounds, which are found throughout the plant kingdom, are important sources of antioxidants in millets. These compounds possess antioxidant properties that play a crucial role in maintaining the body's oxidative balance and providing protection from oxidants, oxidative processes, and reactive species. Little millet cultivars have been found to have higher concentrations of phenolics compared to foxtail millet varieties, with concentrations varying depending on the fractions obtained after milling of grains. Little millets are also rich in bioactive compounds such as gallic acid, vanillic acid, p-hydroxybenzoic acid, sinapic acid, chlorogenic acid, caffeic acid, ferulic acid, and p-coumaric acid.
+
+                Dietary phenolics are classified into three major groups: flavonoids, phenolic acids, and polyphenols. Polyphenols, which are micronutrients obtained from plant-based foods, are particularly rich in antioxidants and have potential health benefits such as improving digestion, managing weight, and reducing the risk of various diseases such as cancer, osteoporosis, neurodegenerative disease, and cardiovascular diseases. Examples of foods rich in polyphenols include quinoa, flaxseed, and hempseed.
+                
+                However, it's worth noting that water-soluble phenol and peroxidase can be responsible for the off-odor of millet flour during storage. Despite this, the existence of phenolics with antioxidant properties supports plant-based bioactivity in the administration or curing of various diseases through therapeutic synergism.
+                
+                
+                
+                
+                
+                </p>
+            <h2> Structure of phenolics </h2>
+            <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Salicylic-acid-skeletal.svg/170px-Salicylic-acid-skeletal.svg.png" jsaction="load:XAeZkd;" jsname="HiaYvf" class="n3VNCb KAlRDb" alt="Phenolic acid - Wikipedia" data-noaft="1" style="width: 170px; height: 185px; margin: 204.2px 0px;"></p>
+            <h2>Health benefits</h2>
+            <p>Phenolic acids are a group of compounds that can be easily absorbed by the walls of your intestinal tract. Consuming these compounds may offer various health benefits, including antioxidant properties that can prevent cellular damage caused by free radicals. Additionally, regular consumption of phenolic acids may help promote anti-inflammatory conditions in your body. <a href="https://www.sciencedirect.com/science/article/pii/S2215017X19302383?via%3Dihub"class="button"> [14]</a>. 
+
+                Drinking coffee has been linked to a reduced risk of certain cancers and chronic diseases, possibly due to its content of caffeic acid and chlorogenic acid, as well as other potentially beneficial compounds.<a href="https://www.tandfonline.com/doi/abs/10.1080/10408390903586412"class="button"></a> On the other hand, red wine also contains phenolic acids, along with resveratrol, another polyphenol that may have positive health effects. Therefore, both coffee and red wine can be valuable sources of these beneficial compounds.<a href="https://www.mdpi.com/2072-6643/11/5/946"class="button">[16] </a>.</p>
+           
+                <h2>Reference</h2>
+            <hr>
+            <ul>
+                <li>[1] Palanisamy Bruntha Devi,corresponding author Rajendran Vijayabharathi, Sathyaseelan Sathyabama, Nagappa Gurusiddappa Malleshi, and Venkatesan Brindha Priyadarisini(1993)<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4033754/"class="button"> “Potential health benefits and problems
+                    associated with antinutrients in foods,” </a>Food Research International, vol. 26, no. 2, pp. 131–149.</li>
+                <li>[2]Muddasarul Hoda, Shanmugam Hemaiswarya & Mukesh Doble (2019) <a href="https://link.springer.com/chapter/10.1007/978-981-13-8997-9_8"class="button">  “Trends in research and development of phenolic phytochemicals as
+                    potential antidiabetic therapeutics,” in Role of Phenolic
+                    Phytochemicals in Diabetes Management.</a> pp. 175–184,
+                    Springer, Berlin, Germany, 2019  </li>
+                <li>[3] Natália Martins , Lillian Barros , Isabel C.F.R. Ferreira(2016) <a href="https://www.sciencedirect.com/science/article/abs/pii/S0924224415300911"class="button">  “In vivo antioxidant activity of phenolic compounds: facts and gaps,”</a> Trends in Food Science & Technology, vol. 48, pp. 1–12, 2016. </li>
+               
+                <li>[4]Bhushan Patwardhan(2005) <a href="https://www.sciencedirect.com/science/article/abs/pii/S0378874105003624"class="button">  “Ethnopharmacology and drug discovery,”</a> Journal of Ethopharmacology, vol. 100, Article ID 50e52, 2016 </li>
+                <li>[5]Harneet Kaur Kala , Rajendra Mehta , Roshni Tandey , Kamal Kumar Sen , Vivekananda Mandal(2016) <a href="https://www.sciencedirect.com/science/article/pii/S2405882316300035"class="button">  “Ten years of research on phenolics (2005–2015): a status report,”</a> Pacific Science Review A: Natural Science and Engineering, vol. 18, no. 1, pp. 1–4, 2016.  </li>
+                
+                <li>[6]Preeti Goyal, Lakshman K. Chugh(2013) <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/jfbc.12033"class="button">  “Partial purification and characterization of peroxidase from pearl millet <i> (Pennisetum Glaucum [L.] R. Br.)</i> grains,” </a>Journal of Food Biochemistry, vol. 38, no. 2, pp. 150–158. </li>
+                <li>[7]T. O. Akanbi, Y. Timilsena, and S. Dhital(2019)<a href="https://link.springer.com/chapter/10.1007/978-981-13-6167-8_10"class="button"> “Bioactives from millet: properties and effects of processing on bioavailability,”</a> Bioactive Factors And Processing Technology For Cereal Foods, Springer, Berlin, Germany, pp. 171–183. </li>
+                <li>[8] D. Koche, R. Shirsat, and M. Kawale(2016)<a href="https://www.researchgate.net/profile/Deepak-Koche/publication/327304552_AN_OVERERVIEW_OF_MAJOR_CLASSES_OF_PHYTOCHEMICALS_THEIR_TYPES_AND_ROLE_IN_DISEASE_PREVENTION/links/5b8766b392851c1e123b329d/AN-OVERERVIEW-OF-MAJOR-CLASSES-OF-PHYTOCHEMICALS-THEIR-TYPES-AND-ROLE-IN-DISEASE-PREVENTION.pdf"class="button">  “An overerview of major classes of phytochemicals: their types and role in disease prevention,”</a> Hislopia Journal, vol. 9, pp. 1–11. </li>
+                <li>[9] D. Del Rio, A. Rodriguez-Mateos, J. P. Spencer, M. Tognolini, G. Borges, and A. Crozier (2013)<a href="https://www.liebertpub.com/doi/full/10.1089/ars.2012.4581"class="button">  “Dietary (poly) phenolics in human health: structures, bioavailability, and evidence of protective effects against chronic diseases,”</a> Antioxidants and Redox Signaling, vol. 18, no. 14, pp. 1818–1892.  </li>
+                <li>[10]R. Repo-Carrasco-Valencia, J. K. Hellström, J. M. Pihlava, and P. H. Mattila(2010)<a href="https://www.sciencedirect.com/science/article/abs/pii/S0308814609011662"class="button">  “Flavonoids and other phenolic compounds in Andean indigenous grains: quinoa (Chenopodium quinoa), kañiwa (Chenopodium pallidicaule) and kiwicha (Amaranthus caudatus),” Food Chemistry, vol. 120, no. 1, pp. 128–133. </a> </li>
+                <li>[11]A. Goyal, V. Sharma, N. Upadhyay, S. Gill, and M. Sihag(2014) <a href="https://link.springer.com/article/10.1007/s13197-013-1247-9"class="button">   “Flax and flaxseed oil: an ancient medicine & modern functional food,” Journal of Food Science & Technology, vol. 51, no. 9, pp. 1633–1653.</a> </li>
+                <li>[12] 
+                  Xiaoli Yan, Jiajing Tang, Carolina dos Santos Passos§, Alessandra Nurisso§, Claudia Avello Simões-Pires§, Mei Ji, Hongxiang Lou, and Peihong Fan(2015)<a href="https://pubs.acs.org/doi/abs/10.1021/acs.jafc.5b05282"class="button"> “Characterization of lignanamides from hemp (Cannabis sativa L.) seed and their antioxidant and acetylcholinesterase inhibitory activities,”</a> Journal of Agricultural and Food Chemistry, vol. 63, no. 49, pp. 10611–10619. </li>
+                
+                
+                <li>[13] Masood Sadiq Butt &M. Tauseef Sultan(2011)<a href="https://www.tandfonline.com/doi/abs/10.1080/10408390903586412"class="button"> Coffee and its consumption: Benefits and risks.</a> Crit Rev Food Sci Nutr. 2011;51(4):363-373. doi:10.1080/10408390903586412 .  </li>
+                <li>[14] ucia Malaguarnera (2019)<a href="https://www.mdpi.com/2072-6643/11/5/946"class="button"> [16] Malaguarnera L. Influence of resveratrol on the immune response.</a> Nutrients. 2019;11(5):946. doi:10.3390/nu11050946 .  </li>
+                <li>[15] <a href="https://www.verywellfit.com/what-is-phenolic-acid-2507071"class="button">How to Add Phenolic Acids to Your Diet </a> </li>
+                
+            </ul>
+        </p>   
+      
+</body>
+</html>

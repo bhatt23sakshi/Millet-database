@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
+<style type="text/css">
+
+  /* ============ desktop view ============ */
+  @media all and (min-width: 992px) {
+  
+    .dropdown-menu li{
+      position: relative;
+    }
+    .dropdown-menu .submenu{ 
+      display: none;
+      position: absolute;
+      left:100%; top:-7px;
+    }
+    .dropdown-menu .submenu-left{ 
+      right:100%; left:auto;
+    }
+  
+    .dropdown-menu > li:hover{ background-color: #f1f1f1 }
+    .dropdown-menu > li:hover > .submenu{
+      display: block;
+    }
+  }	
+  /* ============ desktop view .end// ============ */
+  
+  /* ============ small devices ============ */
+  @media (max-width: 991px) {
+  
+  .dropdown-menu .dropdown-menu{
+      margin-left:0.7rem; margin-right:0.7rem; margin-bottom: .5rem;
+  }
+  
+  }	
+  /* ============ small devices .end// ============ */
+  
+  .masthead{
+      background-size: cover;
+      min-height: 100vh;
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0,0,0,.2);
+    opacity: 80%;
+  }
+  </style>
+  
+  
+  <script type="text/javascript">
+  //	window.addEventListener("resize", function() {
+  //		"use strict"; window.location.reload(); 
+  //	});
+  
+  
+    document.addEventListener("DOMContentLoaded", function(){
+          
+  
+        /////// Prevent closing from click inside dropdown
+      document.querySelectorAll('.dropdown-menu').forEach(function(element){
+        element.addEventListener('click', function (e) {
+          e.stopPropagation();
+        });
+      })
+  
+  
+  
+      // make it as accordion for smaller screens
+      if (window.innerWidth < 992) {
+  
+        // close all inner dropdowns when parent is closed
+        document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
+          everydropdown.addEventListener('hidden.bs.dropdown', function () {
+            // after dropdown is hidden, then find all submenus
+              this.querySelectorAll('.submenu').forEach(function(everysubmenu){
+                // hide every submenu as well
+                everysubmenu.style.display = 'none';
+              });
+          })
+        });
+        
+        document.querySelectorAll('.dropdown-menu a').forEach(function(element){
+          element.addEventListener('click', function (e) {
+      
+              let nextEl = this.nextElementSibling;
+              if(nextEl && nextEl.classList.contains('submenu')) {	
+                // prevent opening link if link needs to open dropdown
+                e.preventDefault();
+                console.log(nextEl);
+                if(nextEl.style.display == 'block'){
+                  nextEl.style.display = 'none';
+                } else {
+                  nextEl.style.display = 'block';
+                }
+  
+              }
+          });
+        })
+      }
+      // end if innerWidth
+  
+    }); 
+    // DOMContentLoaded  end
+  </script>
+    <title>History </title>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+       <a class="navbar-brand" href="/Home page .html">Home</a>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"  aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+     <div class="collapse navbar-collapse" id="main_nav">
+     
+   
+     <ul class="navbar-nav">
+       
+       <li class="nav-item"><a class="nav-link" href="/About.html"> About </a></li>
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Millet  </a>
+           <ul class="dropdown-menu">
+           <li><a class="dropdown-item" href="/millets/history.html"> History </a></li>
+           
+          
+           <li><a class="dropdown-item" href="/millets/Taxonomy.html"> Taxonomy </a></li>
+           <li><a class="dropdown-item" href="/millets/types of millet.html"> Types </a>
+           <li><a class="dropdown-item" href="/millets/Nutrition.html"> Nutrition </a>
+           <li><a class="dropdown-item" href="/millets/Cultivation.html"> Cultivation </a>
+           <li><a class="dropdown-item" href="/millets/production.html"> Production </a>
+           </ul>
+       </li>
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Major Millet  </a>
+           <ul class="dropdown-menu">
+   
+           <li><a class="dropdown-item" href="#"> Finger Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/majorMillets/Finger/history finger millet.html"> History </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Finger/taxonomy finger millet.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Finger/varieties finger millet.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/majorMillets/Finger/nutrition finger millet.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/majorMillets/Finger/cultivation finger millet.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/majorMillets/Finger/production finger millet.html"> Production </a>
+             <li><a class="dropdown-item" href="/majorMillets/Finger/antioxidant finger millet.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Foxtail Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/majorMillets/Foxtail/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Foxtail/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Foxtail/varieties.html"> varieties </a>
+             <li><a class="dropdown-item" href="/majorMillets/Foxtail/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/majorMillets/Foxtail/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/majorMillets/Foxtail/production.html"> Production </a>
+             <li><a class="dropdown-item" href="/majorMillets/Foxtail/antioxidant.html"> Antioxidant </a>
+   
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Pearl Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/majorMillets/Pearl/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Pearl/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Pearl/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/majorMillets/Pearl/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/majorMillets/Pearl/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/majorMillets/Pearl/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/majorMillets/Pearl/antioxidant.html"> Antioxidant </a>
+           </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Proso Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/majorMillets/Praso/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Praso/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Praso/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/majorMillets/Praso/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/majorMillets/Praso/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/majorMillets/Praso/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/majorMillets/Praso/antioxidant.html"> Antioxidant </a>
+            </ul>
+           </li>
+   
+           
+           </ul>
+       </li>
+   
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Minor Millet  </a>
+           <ul class="dropdown-menu">
+   
+           <li><a class="dropdown-item" href="#"> Kodo Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Kudo/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="../minorMillets/Kudo/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="../minorMillets/Kudo/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="../minorMillets/Kudo/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="../minorMillets/Kudo/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="../minorMillets/Kudo/production.html"> Production </a>
+               <li><a class="dropdown-item" href="../minorMillets/Kudo/antioxidant.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Little Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Little/histroy.html"> History </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Little/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Little/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/minorMillets/Little/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/minorMillets/Little/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/minorMillets/Little/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/minorMillets/Little/antioxidant.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Fonio Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Fonio/histroy.html"> History </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Fonio/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Fonio/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/minorMillets/Fonio/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/minorMillets/Fonio/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/minorMillets/Fonio/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/minorMillets/Fonio/antioxidants.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Barnyard Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Barnyard/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Barnyard/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Barnyard/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/minorMillets/Barnyard/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/minorMillets/Barnyard/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/minorMillets/Barnyard/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/minorMillets/Barnyard/antioxidant.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Teff Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Teff/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Teff/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Teff/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/minorMillets/Teff/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/minorMillets/Teff/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/minorMillets/Teff/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/minorMillets/Teff/antioxidant .html"> Antioxidant </a>	
+            </ul>
+           </li>
+   
+           
+           </ul>
+       </li>
+   
+   
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Bioactive Compounds (Major Millet)  </a>
+           <ul class="dropdown-menu">
+   
+           <li><a class="dropdown-item" href="#"> Finger Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Finger/Dietary fibre component..html"> Dietary Fibre </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Finger/Arabinoxylaan.html"> Arabinoxylan </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Finger/flavoniods.html"> Flavoniod </a>
+             
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Finger/phenolic acids.html"> Phenolic Acids  </a>
+             
+            </ul>
+           </li>
+   
+           <li><a class="dropdown-item" href="#"> Foxtail Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Foxtail/phenolics.html"> Phenolic </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Foxtail/bioactive peptides.html"> Bioactive peptide  </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Foxtail/carotenoids.html"> Carotenoids   </a>
+             <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Foxtail/tocols.html"> Tocols  </a>
+             
+            </ul>
+           </li>
+   
+           <li><a class="dropdown-item" href="#"> Pearl Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Pearl/p-coumeric acid.html"> p-Coumeric Acid  </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Pearl/ascorbic acid.html"> Ascorbic Acid   </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Pearl/catechol.html"> Catechol</a></li>
+             <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Pearl/flavonoids.html">Flavanoid </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Pearl/gallic acid.html">Gallic Acid  </a></li>
+                 
+             
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Proso Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/phytochemicals.html"> Phytochemicals </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/phenolics.html"> Phenolics </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/chlorogenic acid.html"> Chlorogenic  </a> </li>
+             <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/p-coumaric acid.html"> p-coumaric Acid  </a> </li>
+             <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/ferulic acid.html"> Ferulic Acid  </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/syringic acid.html"> Syringic Acid   </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/caffeic acid.html"> Caffeic Acid  </a> </li>
+             <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/carotenoids.html"> Carotenoids </a> </li>
+             
+            </ul>
+           </li>
+         
+          
+   
+           
+           </ul>
+       </li>
+   
+   
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Bioactive Compounds (Minor Millet)  </a>
+           <ul class="dropdown-menu">
+   
+           <li><a class="dropdown-item" href="#"> Kodo Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/phytochemicals.html"> phytochemicals</a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/phenolics.html"> Phenolics  </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/catechin.html">Catechin  </a></li>
+             <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/narigin.html"> Naringin </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/p-coumeric acid.html"> P-Coumaric Acid </a></li>
+                 <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/taxifolin.html"> Taxifolin </a></li>
+                   <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/frulic acid.html">Ferulic Acid  </a></li>
+                     <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/sinapic acid.html"> Sinapic Acid </a></li>
+                     <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/pterin-6-carboxylic acid.html">Pterin-6-Carboxylic Acid  </a> </li>
+                       <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/campesterol.html">Campesterol  </a></li>
+   
+             
+            </ul>
+           </li>
+   
+           <li><a class="dropdown-item" href="#"> Little Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Little/phytochemicals.html"> Phytochemicals</a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Little/phenolics.html"> Phenolics </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Little/Luteolin.html"> Luteolin</a>
+             <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Little/Kaempferol.html"> Kaempferol </a>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Little/Apigenin.html"> Apigenin</a>
+             
+            </ul>
+           </li>
+   
+           <li><a class="dropdown-item" href="#"> Fonio Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Fonio/dietary fibre.html"> Dietary Fibre </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Fonio/flavonoids.html"> Flavonoid </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Fonio/phenolics.html"> Phenolics </a> </li>
+             <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Fonio/alkaloids.html"> Alkaloids  </a> </li>
+               
+                    <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Fonio/saponins.html"> Saponins  </a> </li>
+                 
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Barnyard Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Barnyard/phenolics.html"> Phenolics  </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Barnyard/orthodihydroxyphenol.html"> Orthodihydroxyphenol</a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Barnyard/Saponins.html">Saponins  </a>
+             <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Barnyard/Tannins.html"> Tannins  </a>
+             
+            </ul>
+           </li>
+   
+           <li><a class="dropdown-item" href="#"> Teff Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Teff/dietary fibre.html"> Dietary Fibre </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Teff/saponins.html"> Saponins  </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Teff/phytochemicals.html"> Phytochemicals </a>
+             <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Teff/phenoli compounds.html"> Phenolic acid  </a>
+             
+            </ul>
+           </li>
+         
+          
+   
+           
+           </ul>
+       </li>
+   
+       <li class="nav-item"><a class="nav-link" href="/team.html"> Team </a></li>
+   
+     </ul>
+   
+     
+   
+     </div> <!-- navbar-collapse.// -->
+    </div> <!-- container-fluid.// -->
+   </nav>
+<body>
+    <body style="background-color:antiquewhite;"></body> 
+<body>
+   
+    <style>
+        p{font-family: sans-serif;
+        font-size: medium;
+        font-style: normal;}
+        </style>
+
+  <h1> Gallic Acid </h1>
+  <hr>
+  <p><li>Gallic acid is a trihydroxybenzoic acid with hydroxy groups at positions 3, 4, and 5.</li>
+    <li>It functions as an astringent, cyclooxygenase 2 inhibitor, antioxidant, antineoplastic agent, and apoptosis inducer, among other things.</li>
+    <li>Gallic acid is a well-known natural antioxidant and secondary polyphenolic metabolite found in tea and Ayurvedic herbs.</li>
+    <li>It is also utilized in industries such as tanning, ink dyes, and paper production.</li>
+    <li>In high-fat diet induced mice, gallic acid exhibits antihyperlipidemic properties by decreasing triglyceride and low-density lipoprotein-cholesterol levels and increasing high-density lipoprotein-cholesterol.</li></p>
+<h2>Chemical Structure</h2>
+ <p><img src="/image/imgsrv.fcgi?cid=370&amp;t=l" alt="Gallic Acid.png"></p>
+ <strong>IUPAC Name</strong>
+ <p>3,4,5-trihydroxybenzoic acid</p>
+ <strong>Molecular Formula</strong>
+ <p>C7H6O5</p>
+<h2> Properties of Gallic Acid </h2>
+<ul>
+    <li> <strong>Antimicrobial properties </strong></li>
+    <li>Gallic acid has potential to modulate the immune system and serve as a natural defense against microbial infections.</li>
+    <li>Researchers developed a new light-enhanced antimicrobial treatment by exposing gallic acid to ultraviolet-C (UV-C) light, which is commonly used as a disinfectant.</li>
+    <li>The resulting antimicrobial activity was significant, leading to potential use of gallic acid exposed to UV-C light as a new antimicrobial treatment in the food system.</li>
+        <li> <strong>Anti-obesity properties </strong></li>
+        <p>Gallic acid has been found to have potential anti-obesity activities by protecting against inflammation and oxidative stress commonly observed in individuals with obesity. Studies have shown that gallic acid suppresses lipogenesis, which is the synthesis of fat from compounds like sugars within the body, thereby reducing excessive fat storage in individuals with obesity. In addition, gallic acid may improve insulin signaling and reduce oxidative stress and inflammation. In an older study, overweight Japanese adults were administered black Chinese tea extract, which is rich in gallic acid, at a daily dose of 333 mg for 12 weeks. The treatment resulted in a significant reduction in mean waist circumference, body mass index, and belly fat.</p>
+            <li> <strong>Antioxidant properties </strong></li>
+            <p>Gallic acid exhibits potent antioxidant properties, which may help to prevent oxidative stress-induced damage to cells and reduce the risk of chronic diseases. Additionally, gallic acid has shown potential as an anticancer agent and neuroprotective agent. In fact, some research suggests that gallic acid's antioxidant power may be responsible for its ability to prevent the growth and spread of cancer cells. For example, a lab study found that the antiproliferative activity of mango peel, which has its own antioxidant and anticancer properties, can be attributed to its gallic acid content. In another study, researchers enhanced the antioxidant power of γ-AlOOH nanoparticles by coating them with a layer of gallic acid. These findings suggest that gallic acid could have therapeutic potential for the prevention and treatment of various diseases.</p>
+               
+            
+            <h2> Health benefits </h2>
+               <li> <strong>Benefits of Gallic acid in Anticancer</strong></li>
+               <p><p>Cancer is a life-threatening disease characterized by abnormal cell growth and proliferation. When cells in a healthy organism are disrupted, it can lead to the development of cancer. Cancer cells disrupt the normal functions of other cells, which can be devastating.</p>
+                <li> <strong>Benefits of Gallic acid in Gastrointestinal disease</strong></li>
+                <p>Gallic acid has been shown to have a protective effect on the gastrointestinal mucosal layer by reducing acid secretions, which can help prevent problems such as ulcers. Additionally, gallic acid has been studied for its potential therapeutic effects on inflammatory bowel diseases like ulcerative colitis. Its anti-inflammatory properties may help reduce inflammation in the gut and provide relief for symptoms associated with these conditions.</p>
+                <li> <strong>Gallic acid in Gastric Cancer</strong></li>
+                <p>Gastric cancer is one of the leading causes of death worldwide, with the infection of Helicobacter pylori being a significant risk factor. The gastric microbiota plays a crucial role in the development of gastric cancer. Gallic acid has been shown to have a potential role in the prevention and treatment of gastric cancer by reducing the population of Helicobacter pylori.</p>
+               
+                <li> <strong> Benefits of Gallic acid in Metabolic diseases</strong></li>
+              <p><p>Metabolic disorders such as obesity, hyperlipidemia, and diabetes mellitus are prevalent in today's society, and they involve the excess storage of energy in adipocytes. While adipocytes need to store and release energy for survival, an unhealthy diet, sedentary lifestyle, or genetic susceptibility can lead to excessive adipose storage, resulting in metabolic disorders.
+                The good news is that Gallic acid may help reduce the size of adipocytes. It works by inhibiting diet-induced hyperglycemia, which can contribute to the development of metabolic disorders. By reducing adipocyte size, Gallic acid may help alleviate the symptoms of these disorders and improve overall health.</p>
+                    <li> <strong> Benefits of Gallic acid in Cardiovascular diseases</strong></li>
+                   <p><p>Cardiovascular disease, including myocardial infarction, is often caused by an imbalance of oxygen supply to the coronary artery. Various surgical and pharmacological methods are used to decrease this risk. One such method involves the use of Gallic acid, which can reduce harmful oxidative consequences by increasing antioxidant activity in the body, potentially reducing the risk of cardiovascular disease.</p></p>
+                        <li> <strong>Benefits of Gallic acid in Neuropsychological diseases</strong></li>
+                        <p><p>Alzheimer’s disease is a neurodegenerative disorder that can eventually lead to dementia, causing memory loss in patients. 
+                            The neuroprotective effects of gallic acid have been studied for their potential in treating Alzheimer's disease. Gallic acid has been shown to protect nerve cells from toxicity and improve cell viability, which may help prevent or slow down the progression of the disease. By reducing toxicity in the nervous system, gallic acid has the potential to protect against neurodegeneration and preserve cognitive function.</p></p>
+                            <h2>Reference</h2>
+                            <p>
+                                <ul>
+                                    <li><a href="https://www.nhassurance.com/blog/benefits-of-gallic-acid"class="button"> Benefits of Gallic Acid </a> </li>
+                                    <li><a href="https://www.healthline.com/nutrition/gallic-acid#downsides-safety"class="button">Gallic Acid: Benefits, Downsides, and Food Sources</a> </li>
+                                    <li><a href="https://www.sciencedirect.com/topics/medicine-and-dentistry/gallic-acid"class="button"> Gallic Acid : An overview</a> </li>
+                                    <li><a href="https://pubchem.ncbi.nlm.nih.gov/compound/Gallic-acid#section=Canonical-SMILES"class="button">Gallic Acid
+                                        (Compound)</a> </li>
+                                    
+                                   
+                                </ul>
+                            </p>       
+</ul>
+</p>   
+
+</body>
+</html>

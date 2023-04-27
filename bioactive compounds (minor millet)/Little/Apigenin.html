@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apigenin</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
+<style type="text/css">
+
+  /* ============ desktop view ============ */
+  @media all and (min-width: 992px) {
+  
+    .dropdown-menu li{
+      position: relative;
+    }
+    .dropdown-menu .submenu{ 
+      display: none;
+      position: absolute;
+      left:100%; top:-7px;
+    }
+    .dropdown-menu .submenu-left{ 
+      right:100%; left:auto;
+    }
+  
+    .dropdown-menu > li:hover{ background-color: #f1f1f1 }
+    .dropdown-menu > li:hover > .submenu{
+      display: block;
+    }
+  }	
+  /* ============ desktop view .end// ============ */
+  
+  /* ============ small devices ============ */
+  @media (max-width: 991px) {
+  
+  .dropdown-menu .dropdown-menu{
+      margin-left:0.7rem; margin-right:0.7rem; margin-bottom: .5rem;
+  }
+  
+  }	
+  /* ============ small devices .end// ============ */
+  
+  .masthead{
+      background-size: cover;
+      min-height: 100vh;
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0,0,0,.2);
+    opacity: 80%;
+  }
+  </style>
+  
+  
+  <script type="text/javascript">
+  //	window.addEventListener("resize", function() {
+  //		"use strict"; window.location.reload(); 
+  //	});
+  
+  
+    document.addEventListener("DOMContentLoaded", function(){
+          
+  
+        /////// Prevent closing from click inside dropdown
+      document.querySelectorAll('.dropdown-menu').forEach(function(element){
+        element.addEventListener('click', function (e) {
+          e.stopPropagation();
+        });
+      })
+  
+  
+  
+      // make it as accordion for smaller screens
+      if (window.innerWidth < 992) {
+  
+        // close all inner dropdowns when parent is closed
+        document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
+          everydropdown.addEventListener('hidden.bs.dropdown', function () {
+            // after dropdown is hidden, then find all submenus
+              this.querySelectorAll('.submenu').forEach(function(everysubmenu){
+                // hide every submenu as well
+                everysubmenu.style.display = 'none';
+              });
+          })
+        });
+        
+        document.querySelectorAll('.dropdown-menu a').forEach(function(element){
+          element.addEventListener('click', function (e) {
+      
+              let nextEl = this.nextElementSibling;
+              if(nextEl && nextEl.classList.contains('submenu')) {	
+                // prevent opening link if link needs to open dropdown
+                e.preventDefault();
+                console.log(nextEl);
+                if(nextEl.style.display == 'block'){
+                  nextEl.style.display = 'none';
+                } else {
+                  nextEl.style.display = 'block';
+                }
+  
+              }
+          });
+        })
+      }
+      // end if innerWidth
+  
+    }); 
+    // DOMContentLoaded  end
+  </script>
+    <title>History </title>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+       <a class="navbar-brand" href="/Home page .html">Home</a>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"  aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+     <div class="collapse navbar-collapse" id="main_nav">
+     
+   
+     <ul class="navbar-nav">
+       
+       <li class="nav-item"><a class="nav-link" href="/About.html"> About </a></li>
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Millet  </a>
+           <ul class="dropdown-menu">
+           <li><a class="dropdown-item" href="/millets/history.html"> History </a></li>
+           
+          
+           <li><a class="dropdown-item" href="/millets/Taxonomy.html"> Taxonomy </a></li>
+           <li><a class="dropdown-item" href="/millets/types of millet.html"> Types </a>
+           <li><a class="dropdown-item" href="/millets/Nutrition.html"> Nutrition </a>
+           <li><a class="dropdown-item" href="/millets/Cultivation.html"> Cultivation </a>
+           <li><a class="dropdown-item" href="/millets/production.html"> Production </a>
+           </ul>
+       </li>
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Major Millet  </a>
+           <ul class="dropdown-menu">
+   
+           <li><a class="dropdown-item" href="#"> Finger Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/majorMillets/Finger/history finger millet.html"> History </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Finger/taxonomy finger millet.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Finger/varieties finger millet.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/majorMillets/Finger/nutrition finger millet.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/majorMillets/Finger/cultivation finger millet.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/majorMillets/Finger/production finger millet.html"> Production </a>
+             <li><a class="dropdown-item" href="/majorMillets/Finger/antioxidant finger millet.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Foxtail Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/majorMillets/Foxtail/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Foxtail/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Foxtail/varieties.html"> varieties </a>
+             <li><a class="dropdown-item" href="/majorMillets/Foxtail/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/majorMillets/Foxtail/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/majorMillets/Foxtail/production.html"> Production </a>
+             <li><a class="dropdown-item" href="/majorMillets/Foxtail/antioxidant.html"> Antioxidant </a>
+   
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Pearl Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/majorMillets/Pearl/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Pearl/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Pearl/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/majorMillets/Pearl/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/majorMillets/Pearl/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/majorMillets/Pearl/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/majorMillets/Pearl/antioxidant.html"> Antioxidant </a>
+           </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Proso Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/majorMillets/Praso/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Praso/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/majorMillets/Praso/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/majorMillets/Praso/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/majorMillets/Praso/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/majorMillets/Praso/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/majorMillets/Praso/antioxidant.html"> Antioxidant </a>
+            </ul>
+           </li>
+   
+           
+           </ul>
+       </li>
+   
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Minor Millet  </a>
+           <ul class="dropdown-menu">
+   
+           <li><a class="dropdown-item" href="#"> Kodo Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Kudo/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="../minorMillets/Kudo/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="../minorMillets/Kudo/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="../minorMillets/Kudo/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="../minorMillets/Kudo/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="../minorMillets/Kudo/production.html"> Production </a>
+               <li><a class="dropdown-item" href="../minorMillets/Kudo/antioxidant.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Little Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Little/histroy.html"> History </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Little/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Little/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/minorMillets/Little/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/minorMillets/Little/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/minorMillets/Little/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/minorMillets/Little/antioxidant.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Fonio Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Fonio/histroy.html"> History </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Fonio/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Fonio/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/minorMillets/Fonio/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/minorMillets/Fonio/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/minorMillets/Fonio/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/minorMillets/Fonio/antioxidants.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Barnyard Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Barnyard/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Barnyard/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Barnyard/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/minorMillets/Barnyard/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/minorMillets/Barnyard/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/minorMillets/Barnyard/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/minorMillets/Barnyard/antioxidant.html"> Antioxidant </a>
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Teff Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+               <li><a class="dropdown-item" href="/minorMillets/Teff/history.html"> History </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Teff/taxonomy.html"> Taxonomy </a></li>
+               <li><a class="dropdown-item" href="/minorMillets/Teff/varieties.html"> Varieties </a>
+             <li><a class="dropdown-item" href="/minorMillets/Teff/nutrition.html"> Nutrition </a>
+             <li><a class="dropdown-item" href="/minorMillets/Teff/cultivation.html"> Cultivation </a>
+             <li><a class="dropdown-item" href="/minorMillets/Teff/production.html"> Production </a>
+               <li><a class="dropdown-item" href="/minorMillets/Teff/antioxidant .html"> Antioxidant </a>	
+            </ul>
+           </li>
+   
+           
+           </ul>
+       </li>
+   
+   
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Bioactive Compounds (Major Millet)  </a>
+           <ul class="dropdown-menu">
+   
+           <li><a class="dropdown-item" href="#"> Finger Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Finger/Dietary fibre component..html"> Dietary Fibre </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Finger/Arabinoxylaan.html"> Arabinoxylan </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Finger/flavoniods.html"> Flavoniod </a>
+             
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Finger/phenolic acids.html"> Phenolic Acids  </a>
+             
+            </ul>
+           </li>
+   
+           <li><a class="dropdown-item" href="#"> Foxtail Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Foxtail/phenolics.html"> Phenolic </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Foxtail/bioactive peptides.html"> Bioactive peptide  </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Foxtail/carotenoids.html"> Carotenoids   </a>
+             <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Foxtail/tocols.html"> Tocols  </a>
+             
+            </ul>
+           </li>
+   
+           <li><a class="dropdown-item" href="#"> Pearl Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Pearl/p-coumeric acid.html"> p-Coumeric Acid  </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Pearl/ascorbic acid.html"> Ascorbic Acid   </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Pearl/catechol.html"> Catechol</a></li>
+             <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Pearl/flavonoids.html">Flavanoid </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Pearl/gallic acid.html">Gallic Acid  </a></li>
+                 
+             
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Proso Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/phytochemicals.html"> Phytochemicals </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/phenolics.html"> Phenolics </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/chlorogenic acid.html"> Chlorogenic  </a> </li>
+             <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/p-coumaric acid.html"> p-coumaric Acid  </a> </li>
+             <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/ferulic acid.html"> Ferulic Acid  </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/syringic acid.html"> Syringic Acid   </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/caffeic acid.html"> Caffeic Acid  </a> </li>
+             <li><a class="dropdown-item" href="/bioactive compounds (major millet)/Proso/carotenoids.html"> Carotenoids </a> </li>
+             
+            </ul>
+           </li>
+         
+          
+   
+           
+           </ul>
+       </li>
+   
+   
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Bioactive Compounds (Minor Millet)  </a>
+           <ul class="dropdown-menu">
+   
+           <li><a class="dropdown-item" href="#"> Kodo Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/phytochemicals.html"> phytochemicals</a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/phenolics.html"> Phenolics  </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/catechin.html">Catechin  </a></li>
+             <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/narigin.html"> Naringin </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/p-coumeric acid.html"> P-Coumaric Acid </a></li>
+                 <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/taxifolin.html"> Taxifolin </a></li>
+                   <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/frulic acid.html">Ferulic Acid  </a></li>
+                     <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/sinapic acid.html"> Sinapic Acid </a></li>
+                     <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/pterin-6-carboxylic acid.html">Pterin-6-Carboxylic Acid  </a> </li>
+                       <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Kodo/campesterol.html">Campesterol  </a></li>
+   
+             
+            </ul>
+           </li>
+   
+           <li><a class="dropdown-item" href="#"> Little Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Little/phytochemicals.html"> Phytochemicals</a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Little/phenolics.html"> Phenolics </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Little/Luteolin.html"> Luteolin</a>
+             <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Little/Kaempferol.html"> Kaempferol </a>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Little/Apigenin.html"> Apigenin</a>
+             
+            </ul>
+           </li>
+   
+           <li><a class="dropdown-item" href="#"> Fonio Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Fonio/dietary fibre.html"> Dietary Fibre </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Fonio/flavonoids.html"> Flavonoid </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Fonio/phenolics.html"> Phenolics </a> </li>
+             <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Fonio/alkaloids.html"> Alkaloids  </a> </li>
+               
+                    <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Fonio/saponins.html"> Saponins  </a> </li>
+                 
+            </ul>
+           </li>
+           <li><a class="dropdown-item" href="#"> Barnyard Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Barnyard/phenolics.html"> Phenolics  </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Barnyard/orthodihydroxyphenol.html"> Orthodihydroxyphenol</a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Barnyard/Saponins.html">Saponins  </a>
+             <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Barnyard/Tannins.html"> Tannins  </a>
+             
+            </ul>
+           </li>
+   
+           <li><a class="dropdown-item" href="#"> Teff Millet &raquo; </a>
+              <ul class="submenu dropdown-menu">
+   
+   
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Teff/dietary fibre.html"> Dietary Fibre </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Teff/saponins.html"> Saponins  </a></li>
+               <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Teff/phytochemicals.html"> Phytochemicals </a>
+             <li><a class="dropdown-item" href="/bioactive compounds (minor millet)/Teff/phenoli compounds.html"> Phenolic acid  </a>
+             
+            </ul>
+           </li>
+         
+          
+   
+           
+           </ul>
+       </li>
+   
+       <li class="nav-item"><a class="nav-link" href="/team.html"> Team </a></li>
+   
+     </ul>
+   
+     
+   
+     </div> <!-- navbar-collapse.// -->
+    </div> <!-- container-fluid.// -->
+   </nav>
+<body>
+    <body style="background-color:antiquewhite;"></body> 
+<body>
+  
+    <style>
+        p{font-family:sans-serif;
+        font-size: medium;
+        font-style: normal;}
+
+        </style>
+        <h1> Apigenin</h1>
+        <hr>
+        <p>Apigenin is a naturally occurring trihydroxyflavone, belonging to the flavone subclass of bioflavonoids, that can be found in various plants and herbs. Chamomile tea is a particularly rich source of apigenin, which has been shown to reduce anxiety in high doses, and can even have sedative effects at even higher doses. In addition to its anxiolytic properties, apigenin has also been identified as a potent anti-cancer compound with high selectivity for cancer cells, making it a promising candidate for cancer prevention and treatment. Unlike conventional chemotherapy drugs, apigenin has a very high safety threshold and can be obtained through consuming a diet rich in vegetables and fruits. </p>
+
+
+
+
+     <h2> Structure of Apigenin </h2>
+        <p><img src="/image/imgsrv.fcgi?cid=5280443&amp;t=l" alt="Apigenin.png"></p>
+        <strong>IUPAC name</strong>
+        <p>5,7-Dihydroxy-2-(4-hydroxyphenyl)-4Hchromen-4-one</p>
+        <strong> Chemical formula </strong>
+        <p>C15H10O5</p>
+        <h2> Properties of Apigenin </h2>
+        <hr>
+        <p>
+            <ul>
+                <li> Antioxidant property </li>
+                <li> Antimutagenic property </li>
+                <li> Anticarcinogenic property </li>
+                <li> Antiinflammatory property </li>
+                <li> Antiproliferative properties </li>
+            </ul>
+        </p>
+        <h2> Health benefits </h2>
+        <p>
+            <ul>
+                <li> <strong>Apigenin for sleep</strong></li>
+                <p>Insomnia, a sleep disorder that can have a significant impact on health and well-being, is a condition that affects many people. Chamomile flower extract, a plant rich in apigenin, has been investigated for its potential to improve sleep quality in individuals with insomnia not attributable to medication or a medical condition. Although the effects of chamomile on nocturnal sleep were modest, participants reported a slight improvement in their ability to function effectively during the day following chamomile supplementation.</p>
+                <li> <strong>Apigenin for testosterone </strong></li>
+                <p>Testosterone is a vital hormone for male fertility, playing a critical role in male development and sperm production. As men age, their testosterone levels can decrease, leading to a range of undesirable symptoms such as fatigue, erectile dysfunction, and decreased muscle mass.
+                    Recent studies have shown that flavonoids, such as apigenin, can help delay the decline in testosterone levels caused by aging. In fact, these compounds may even boost testosterone production in the testicles. Consuming a high-quality diet rich in fruits and vegetables can provide sufficient amounts of flavonoids to achieve these benefits and help maintain healthy testosterone levels.</p>
+                    <li> <strong> Apigenin for anxiety</strong></li>
+                    <p>Apigenin has been found to be capable of crossing the blood-brain barrier, allowing it to act on the central nervous system. While the full extent of its effects is not yet fully understood, studies using chamomile extract (which is rich in apigenin) have shown a calming effect. This suggests that apigenin has the potential to affect brain function and provide a natural means of promoting relaxation and reducing anxiety. Further research is needed to fully explore its potential benefits for mental health.</p>
+                    <li> <strong>Apigenin for blood sugar</strong></li>
+                    
+                    <p>Apigenin has shown promising potential in regulating blood glucose levels by increasing insulin secretion. Insulin is a hormone that plays a crucial role in lowering blood sugar levels, and apigenin may help improve insulin sensitivity in the body. However, more research is needed to fully understand the mechanisms behind this effect and to determine the optimal dose of apigenin for blood glucose regulation.</p>
+                        It can also help prevent some of the health complications of diabetes. Apigenin can help increase the levels of nitric oxide (NO) in the cells that make up the walls of your vascular system. This, in turn, may protect against the damage that happens to your blood vessels when you have diabetes .</p>
+                        
+                        <li> <strong> Apigenin for cancer</strong></li>
+                       
+                        <p>Cancer is a condition caused by the abnormal multiplication of cells in the body. Chemotherapy is currently the most effective way to treat cancer, but it has significant side effects and can lead to drug resistance. Therefore, researchers have been investigating other types of molecules, including flavonoids like apigenin, to treat various types of cancer, including prostate and breast cancer.
+                            Ongoing trials are exploring the anti-cancer properties of apigenin. Researchers suggest that apigenin may prevent the growth and multiplication of cancer cells by triggering their death (apoptosis). It may also stimulate the immune system to help fight cancer cells and possesses anti-inflammatory properties.
+                            
+                            However, the doses of apigenin commonly used in humans are likely only moderately effective against cancer. Therefore, researchers may recommend a combination of apigenin and chemotherapy drugs if apigenin is eventually recommended at all. At present, chemotherapy, radiation, and other well-researched therapies are the best treatments for most cancers.</p>
+            </ul>
+        </p>
+        <h2>Reference </h2>
+        <p>
+         <ul>
+           <li>[1]<a href="https://pubchem.ncbi.nlm.nih.gov/compound/Apigenin#section=2D-Structure"class="button"> Apigenin
+            (Compound) </a> </li>
+           <li>[2]<a href="https://examine.com/supplements/apigenin/"class="button"> Apigenin — Health benefits, dosage, safety,  </a> </li>
+           <li>[3]Swarnima Dey, Alok Saxena, Yogesh Kumar, Tanushree Maity, Ayon Tarafdar(2022) <a href="https://www.hindawi.com/journals/jfq/2022/1578448/"class="button"> Understanding the Antinutritional Factors and Bioactive Compounds of Kodo Millet (Paspalum scrobiculatum) and Little Millet (Panicum sumatrense) </a> Journal of Food Quality, vol. 2022, Article ID 1578448. https://doi.org/10.1155/2022/1578448 </li>
+           <li>[4] <a href="https://ro.co/health-guide/apigenin-what-is-it/"class="button">Apigenin: what is it, uses, benefits, dosage  </a> </li>
+           <li>[5]<a href="https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/apigenin"class="button"> Apigenin: overerview </a> </li>
+           
+         </ul>
+        </p>
+    </p>   
+   
+
+</body>
+</html>
